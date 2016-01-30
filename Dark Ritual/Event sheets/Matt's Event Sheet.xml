@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2eventsheet>
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
-    <name>Event sheet 1</name>
+    <name>Matt&apos;s Event Sheet</name>
     <events>
         <event-block sid="1733197274192501">
             <conditions>
@@ -11,6 +11,18 @@
                 <action behavior="Pin" id="0" name="Pin to object" sid="3583608577060621" type="Sprite">
                     <param id="0" name="Pin to">Sprite3</param>
                     <param id="1" name="Mode">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3764245635268587">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="2798417030786948" type="System" />
+            </conditions>
+            <actions>
+                <action id="-21" name="Rotate toward position" sid="4400561011780549" type="Sprite3">
+                    <param id="0" name="Degrees">3</param>
+                    <param id="1" name="X">Mouse.X</param>
+                    <param id="2" name="Y">Mouse.Y</param>
                 </action>
             </actions>
         </event-block>
