@@ -120,6 +120,9 @@
         <object-type name="Score" sid="1081996461123126">
             <plugin id="Text" />
         </object-type>
+        <object-type name="Health" sid="1114238833889259">
+            <plugin id="Text" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
