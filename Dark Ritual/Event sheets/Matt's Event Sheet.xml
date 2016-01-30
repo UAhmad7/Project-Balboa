@@ -97,8 +97,16 @@
                             <param id="0" name="Comparison">2</param>
                             <param id="1" name="Opacity">16</param>
                         </condition>
+                        <condition id="-6" name="Every X seconds" sid="689593660279651" type="System">
+                            <param id="0" name="Interval (seconds)">1.0</param>
+                        </condition>
                     </conditions>
-                    <actions />
+                    <actions>
+                        <action id="-11" name="Subtract from" sid="1055695994831183" type="System">
+                            <param id="0" name="Variable">Health</param>
+                            <param id="1" name="Value">5</param>
+                        </action>
+                    </actions>
                 </event-block>
             </sub-events>
         </event-group>
