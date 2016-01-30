@@ -3,6 +3,8 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Matt&apos;s Event Sheet</name>
     <events>
+        <variable constant="0" name="ItemsInventory" sid="7441565150820299" static="0" type="number">0</variable>
+        <variable constant="0" name="ItemsSacrificed" sid="3378719633539822" static="0" type="number">0</variable>
         <event-group description="" sid="309169230906067" title="Movement">
             <sub-events>
                 <event-block sid="3764245635268587">
@@ -69,7 +71,7 @@
         </event-group>
         <event-group description="" sid="2824668362115312" title="Light Management">
             <sub-events>
-                <event-block sid="1733197274192501">
+                <event-block disabled="1" sid="1733197274192501">
                     <conditions>
                         <condition id="-18" name="On created" sid="7148477528807977" type="Light" />
                     </conditions>
@@ -80,7 +82,7 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="3274623532455798">
+                <event-block disabled="1" sid="3274623532455798">
                     <conditions>
                         <condition id="-1" name="Every tick" sid="1251430525457739" type="System" />
                     </conditions>
@@ -91,7 +93,7 @@
                     </actions>
                 </event-block>
                 <comment>Persistent Damage while in the dark, add after I get the health.</comment>
-                <event-block sid="323440118038885">
+                <event-block disabled="1" sid="323440118038885">
                     <conditions>
                         <condition id="-10" name="Compare opacity" sid="6997927966888492" type="Light">
                             <param id="0" name="Comparison">2</param>
@@ -103,6 +105,47 @@
                     </conditions>
                     <actions>
                         <action id="-11" name="Subtract from" sid="1055695994831183" type="System">
+                            <param id="0" name="Variable">Health</param>
+                            <param id="1" name="Value">5</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3733696978849968">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="1806426123702287" type="Flashlight" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="1155171418273894" type="Flashlight">
+                            <param id="0" name="Pin to">Player</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4302458722369258">
+                    <conditions>
+                        <condition id="-10" name="Compare opacity" sid="4519785345781901" type="Flashlight">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="Opacity">4</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="1255401074639432" type="Flashlight">
+                            <param id="0" name="Opacity">Self.Opacity - dt</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="2579327628019813">
+                    <conditions>
+                        <condition id="-10" name="Compare opacity" sid="6723635979492945" type="Flashlight">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="Opacity">16</param>
+                        </condition>
+                        <condition id="-6" name="Every X seconds" sid="3396431539168589" type="System">
+                            <param id="0" name="Interval (seconds)">1.0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" sid="6296264660943581" type="System">
                             <param id="0" name="Variable">Health</param>
                             <param id="1" name="Value">5</param>
                         </action>

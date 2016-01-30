@@ -140,7 +140,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Light" uid="1">
+                <instance type="Flashlight" uid="1">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -150,14 +150,14 @@
                     <behavior-instances>
                         <behavior-instance type="Pin" />
                     </behavior-instances>
-                    <blend-mode>1</blend-mode>
+                    <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>458</x>
-                        <y>253</y>
+                        <x>630</x>
+                        <y>256</y>
                         <z>0</z>
-                        <width>256</width>
-                        <height>256</height>
+                        <width>512</width>
+                        <height>384</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
