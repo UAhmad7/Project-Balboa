@@ -3,28 +3,104 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Matt&apos;s Event Sheet</name>
     <events>
-        <event-block sid="1733197274192501">
-            <conditions>
-                <condition id="-18" name="On created" sid="7148477528807977" type="Sprite" />
-            </conditions>
-            <actions>
-                <action behavior="Pin" id="0" name="Pin to object" sid="3583608577060621" type="Sprite">
-                    <param id="0" name="Pin to">Sprite3</param>
-                    <param id="1" name="Mode">0</param>
-                </action>
-            </actions>
-        </event-block>
-        <event-block sid="3764245635268587">
-            <conditions>
-                <condition id="-1" name="Every tick" sid="2798417030786948" type="System" />
-            </conditions>
-            <actions>
-                <action id="-21" name="Rotate toward position" sid="4400561011780549" type="Sprite3">
-                    <param id="0" name="Degrees">3</param>
-                    <param id="1" name="X">Mouse.X</param>
-                    <param id="2" name="Y">Mouse.Y</param>
-                </action>
-            </actions>
-        </event-block>
+        <event-group description="" sid="309169230906067" title="Movement">
+            <sub-events>
+                <event-block sid="3764245635268587">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="2798417030786948" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-21" name="Rotate toward position" sid="4400561011780549" type="Player">
+                            <param id="0" name="Degrees">3</param>
+                            <param id="1" name="X">Mouse.X</param>
+                            <param id="2" name="Y">Mouse.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4064948706737141">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="5190598174170786" type="Keyboard">
+                            <param id="0" name="Key">65 (A)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="8536040232417325" type="Player">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8131606955951886">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="8005913355505178" type="Keyboard">
+                            <param id="0" name="Key">68 (D)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="9866850416733962" type="Player">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5483924851451639">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="362678098764687" type="Keyboard">
+                            <param id="0" name="Key">87 (W)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="4382080448705204" type="Player">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3346227181530814">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="9201451264038443" type="Keyboard">
+                            <param id="0" name="Key">83 (S)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="8Direction" id="7" name="Simulate control" sid="3958546805435672" type="Player">
+                            <param id="0" name="Control">3</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="2824668362115312" title="Light Management">
+            <sub-events>
+                <event-block sid="1733197274192501">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="7148477528807977" type="Light" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="3583608577060621" type="Light">
+                            <param id="0" name="Pin to">Player</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3274623532455798">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="1251430525457739" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="1765853761806048" type="Light">
+                            <param id="0" name="Opacity">Self.Opacity - dt</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <comment>Persistent Damage while in the dark, add after I get the health.</comment>
+                <event-block sid="323440118038885">
+                    <conditions>
+                        <condition id="-10" name="Compare opacity" sid="6997927966888492" type="Light">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="Opacity">16</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>
