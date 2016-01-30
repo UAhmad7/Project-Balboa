@@ -56,6 +56,25 @@
                 <action id="0" name="Set text" sid="6562847145458057" type="Health">
                     <param id="0" name="Text">&quot;Health: &quot; &amp; Health</param>
                 </action>
+                <action id="-5" name="Set width" sid="7434073938774913" type="Sprite">
+                    <param id="0" name="Width">Sprite.ImageWidth * (Health / 100)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9945749984524753">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="4562066802342582" type="System" />
+            </conditions>
+            <actions>
+                <action id="-5" name="Set width" sid="5985769952700867" type="Sprite">
+                    <param id="0" name="Width">Sprite.ImageWidth * (Health / 100)</param>
+                </action>
+                <action id="0" name="Set text" sid="3667782352647369" type="Health">
+                    <param id="0" name="Text">&quot;Health: &quot; &amp; Health</param>
+                </action>
+                <action id="0" name="Set text" sid="9641672678462099" type="Score">
+                    <param id="0" name="Text">&quot;Score: &quot; &amp; Score</param>
+                </action>
             </actions>
         </event-block>
     </events>
