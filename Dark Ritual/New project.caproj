@@ -14,6 +14,7 @@
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Scirra" id="Tilemap" version="1">Tilemap</plugin>
     </used-plugins>
     <used-behaviors>
@@ -132,7 +133,7 @@
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5358174020556268" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Matt\Documents\GitHub\Project-Balboa\Dark Ritual\Flashlight.png">
+                    <frame duration="1" hotspotX="0.125" hotspotY="0.5" original-source="D:\Matt\Documents\GitHub\Project-Balboa\Dark Ritual\Flashlight.png">
                         <collision-poly>
                             <point x="0.328125" y="0.4375" />
                             <point x="0.5" y="0.3125" />
@@ -155,11 +156,16 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="GrassOutside" sid="6382424485472834">
+            <plugin id="TiledBg" />
+            <texture original-source="D:\Matt\Documents\GitHub\Project-Balboa\Dark Ritual\GrassTile.png" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
         <layout>Layout 1.xml</layout>
         <layout>Umair.xml</layout>
+        <layout>Game Layout.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Matt&apos;s Event Sheet.xml</event-sheet>

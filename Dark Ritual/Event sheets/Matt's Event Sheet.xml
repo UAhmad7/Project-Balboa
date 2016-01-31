@@ -153,5 +153,22 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-block sid="8504561815983581">
+            <conditions>
+                <condition id="-18" name="On created" sid="6354571045142796" type="Player" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="5855028545666789" type="System">
+                    <param id="0" name="Object to create">Flashlight</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">Player.X</param>
+                    <param id="3" name="Y">Player.Y</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="1753241682994438" type="Flashlight">
+                    <param id="0" name="Pin to">Player</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>
