@@ -14,7 +14,10 @@
                     </conditions>
                     <actions>
                         <action id="5" name="Set frame" sid="1800309581665941" type="BatteryBar">
-                            <param id="0" name="Frame number">0</param>
+                            <param id="0" name="Frame number">3</param>
+                        </action>
+                        <action id="6" name="Set speed" sid="6619711358023237" type="BatteryBar">
+                            <param id="0" name="Speed">0</param>
                         </action>
                     </actions>
                 </event-block>
@@ -145,6 +148,9 @@
                                     <param id="0" name="Instance variable">charge</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
+                                <action id="5" name="Set frame" sid="6878225760876424" type="BatteryBar">
+                                    <param id="0" name="Frame number">Self.AnimationFrame + 1</param>
+                                </action>
                             </actions>
                         </event-block>
                     </sub-events>
@@ -179,9 +185,6 @@
                             <param id="0" name="Instance variable">emitting_light</param>
                             <param id="1" name="Value">0</param>
                         </action>
-                        <action id="5" name="Set frame" sid="366101157328779" type="BatteryBar">
-                            <param id="0" name="Frame number">6</param>
-                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="579380928050008">
@@ -192,11 +195,27 @@
                     </conditions>
                     <actions>
                         <action id="-9" name="Destroy" sid="749029279409173" type="Battery" />
-                        <action id="-11" name="Add to" sid="1878981551750834" type="Flashlight">
-                            <param id="0" name="Instance variable">charge</param>
-                            <param id="1" name="Value">5</param>
-                        </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="3453699179252848">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="8760810493108174" type="Flashlight">
+                                    <param id="0" name="Instance variable">charge</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">5</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-11" name="Add to" sid="1878981551750834" type="Flashlight">
+                                    <param id="0" name="Instance variable">charge</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="959438887631967" type="BatteryBar">
+                                    <param id="0" name="Frame number">Self.AnimationFrame - 1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>
