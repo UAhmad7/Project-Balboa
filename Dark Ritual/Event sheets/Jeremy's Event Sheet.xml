@@ -32,5 +32,35 @@
                 </action>
             </actions>
         </event-block>
+        <event-block sid="272072284199983">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="5699880342445769" type="Player">
+                    <param id="0" name="Object">Altar</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="5656221775667097" type="Player">
+                    <param id="0" name="Instance variable">has_urn</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="6862110708890461" type="Player">
+                    <param id="0" name="Instance variable">has_urn</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6696549896067434">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="3398918134089082" type="Player">
+                    <param id="0" name="Object">Urn</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="9396582253117205" type="Player">
+                    <param id="0" name="Instance variable">has_urn</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="1952187796637107" type="Urn" />
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>
