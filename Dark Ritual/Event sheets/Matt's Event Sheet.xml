@@ -195,6 +195,12 @@
                     </conditions>
                     <actions>
                         <action id="-9" name="Destroy" sid="749029279409173" type="Battery" />
+                        <action id="0" name="Play" sid="6306725502654231" type="Audio">
+                            <param id="0" name="Audio file">BatteryPickup</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
                     </actions>
                     <sub-events>
                         <event-block sid="3453699179252848">
@@ -312,6 +318,11 @@
                         <condition id="-7" name="Compare instance variable" sid="5594069316246415" type="Zombie">
                             <param id="0" name="Instance variable">Cooldown</param>
                             <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="3956166065508297" type="System">
+                            <param id="0" name="Variable">Health</param>
+                            <param id="1" name="Comparison">4</param>
                             <param id="2" name="Value">0</param>
                         </condition>
                     </conditions>
@@ -488,6 +499,12 @@
                             <param id="1" name="Value">1</param>
                         </action>
                         <action id="-9" name="Destroy" sid="2860443258490072" type="Urn" />
+                        <action id="0" name="Play" sid="1999142660706254" type="Audio">
+                            <param id="0" name="Audio file">BatteryPickup</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
                     </actions>
                 </event-block>
             </sub-events>
@@ -538,6 +555,12 @@
                             <param id="0" name="Object">Bullet</param>
                             <param id="1" name="Layer">0</param>
                             <param id="2" name="Image point">0</param>
+                        </action>
+                        <action id="0" name="Play" sid="3097793800750432" type="Audio">
+                            <param id="0" name="Audio file">GunFire</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
                         </action>
                     </actions>
                 </event-block>

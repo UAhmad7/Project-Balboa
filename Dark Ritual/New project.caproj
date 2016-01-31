@@ -404,6 +404,10 @@
     <sounds-folder>
         <file name="ZombieAttack.m4a" />
         <file name="ZombieAttack.ogg" />
+        <file name="BatteryPickup.m4a" />
+        <file name="BatteryPickup.ogg" />
+        <file name="GunFire.m4a" />
+        <file name="GunFire.ogg" />
     </sounds-folder>
     <music-folder />
     <files-folder>

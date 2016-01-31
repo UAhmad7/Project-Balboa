@@ -458,7 +458,7 @@
                     <properties>
                         <text>Game Over</text>
                         <initial-visibility>Invisible</initial-visibility>
-                        <font>Arial,-32,400,0</font>
+                        <font>Chiller,-32,700,0</font>
                         <color>204,0,51</color>
                         <horizontal-alignment>Left</horizontal-alignment>
                         <vertical-alignment>Top</vertical-alignment>
