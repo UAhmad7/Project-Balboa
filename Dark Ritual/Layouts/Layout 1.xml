@@ -147,6 +147,10 @@
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <instance-variables>
+                        <charge>10</charge>
+                        <emitting_light>true</emitting_light>
+                    </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Pin" />
                     </behavior-instances>
