@@ -2,5 +2,35 @@
 <c2eventsheet>
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Jeremy&apos;s Event Sheet</name>
-    <events />
+    <events>
+        <event-block sid="7686626168420055">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="6602304001525965" type="Flashlight">
+                    <param id="0" name="Instance variable">charge</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-13" name="Set boolean" sid="4188483259491141" type="Flashlight">
+                    <param id="0" name="Instance variable">emitting_light</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9906336956348084">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="6920058024918044" type="Battery">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="8373763066951077" type="Battery" />
+                <action id="-11" name="Add to" sid="4799554677014997" type="Flashlight">
+                    <param id="0" name="Instance variable">charge</param>
+                    <param id="1" name="Value">5</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
 </c2eventsheet>
