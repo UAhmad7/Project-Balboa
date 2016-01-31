@@ -4,6 +4,7 @@
     <name>Matt&apos;s Event Sheet</name>
     <events>
         <variable constant="0" name="ItemsInventory" sid="7441565150820299" static="0" type="number">0</variable>
+        <variable constant="1" name="BatSpawnInterval" sid="7567281898142326" static="0" type="number">10</variable>
         <variable constant="0" name="ItemsSacrificed" sid="3378719633539822" static="0" type="number">0</variable>
         <event-group description="" sid="309169230906067" title="Movement">
             <sub-events>
@@ -151,24 +152,100 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="8504561815983581">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="6354571045142796" type="Player" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="5855028545666789" type="System">
+                            <param id="0" name="Object to create">Flashlight</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">Player.X</param>
+                            <param id="3" name="Y">Player.Y</param>
+                        </action>
+                        <action behavior="Pin" id="0" name="Pin to object" sid="1753241682994438" type="Flashlight">
+                            <param id="0" name="Pin to">Player</param>
+                            <param id="1" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="853295169368075">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="8485519888165726" type="Player">
+                            <param id="0" name="Object">BAttery</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Set opacity" sid="7291305666891415" type="Flashlight">
+                            <param id="0" name="Opacity">80</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="7760769184429669" type="BAttery" />
+                    </actions>
+                </event-block>
+                <event-block sid="449105888050777">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="6062639932317198" type="System">
+                            <param id="0" name="Interval (seconds)">BATSPAWNINTERVAL * (ItemsSacrificed + 1)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="1940085641688151" type="System">
+                            <param id="0" name="Object to create">BAttery</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">random(LayoutWidth)</param>
+                            <param id="3" name="Y">random(LayoutHeight)</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
-        <event-block sid="8504561815983581">
-            <conditions>
-                <condition id="-18" name="On created" sid="6354571045142796" type="Player" />
-            </conditions>
-            <actions>
-                <action id="-3" name="Create object" sid="5855028545666789" type="System">
-                    <param id="0" name="Object to create">Flashlight</param>
-                    <param id="1" name="Layer">0</param>
-                    <param id="2" name="X">Player.X</param>
-                    <param id="3" name="Y">Player.Y</param>
-                </action>
-                <action behavior="Pin" id="0" name="Pin to object" sid="1753241682994438" type="Flashlight">
-                    <param id="0" name="Pin to">Player</param>
-                    <param id="1" name="Mode">0</param>
-                </action>
-            </actions>
-        </event-block>
+        <event-group description="" sid="1422720241882561" title="Zombie AI">
+            <sub-events>
+                <event-block sid="5482636340796799">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="792298431961296" type="System">
+                            <param id="0" name="Object">Zombie</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="751636557503872">
+                            <conditions>
+                                <condition behavior="Pathfinding" id="4" inverted="1" name="Is moving along path" sid="3163503106015568" type="Zombie" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="2244170365061901">
+                                    <conditions>
+                                        <condition behavior="LineOfSight" id="0" name="Has LOS to object" sid="3732781731481447" type="Zombie">
+                                            <param id="0" name="Object">Player</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Pathfinding" id="0" name="Find path" sid="8986757510802965" type="Zombie">
+                                            <param id="0" name="X">Player.X</param>
+                                            <param id="1" name="Y">Player.Y</param>
+                                        </action>
+                                        <action behavior="Pathfinding" id="1" name="Move along path" sid="514618380487065" type="Zombie" />
+                                    </actions>
+                                </event-block>
+                                <event-block sid="8139918614804768">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="4562816924668237" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Pathfinding" id="0" name="Find path" sid="6755942514177815" type="Zombie">
+                                            <param id="0" name="X">(Self.X - 15) + random(30)</param>
+                                            <param id="1" name="Y">(Self.Y - 15) + random(30)</param>
+                                        </action>
+                                        <action behavior="Pathfinding" id="1" name="Move along path" sid="6551483465763577" type="Zombie" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>

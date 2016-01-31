@@ -19,7 +19,10 @@
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="LOS" version="1">Line Of Sight</behavior>
+        <behavior author="Scirra" id="Pathfinding" version="1">Pathfinding</behavior>
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
@@ -28,8 +31,8 @@
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
     </configurations>
     <window-size>
-        <width>1280</width>
-        <height>720</height>
+        <width>960</width>
+        <height>540</height>
     </window-size>
     <pixel-rounding>0</pixel-rounding>
     <preview-effects>1</preview-effects>
@@ -159,6 +162,58 @@
         <object-type name="GrassOutside" sid="6382424485472834">
             <plugin id="TiledBg" />
             <texture original-source="D:\Matt\Documents\GitHub\Project-Balboa\Dark Ritual\GrassTile.png" />
+        </object-type>
+        <object-type name="BAttery" sid="5650440272365436">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5798236160934429" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.461538" original-source="D:\Matt\Documents\GitHub\Project-Balboa\Dark Ritual\Battery.png">
+                        <collision-poly>
+                            <point x="0.3" y="0.153846" />
+                            <point x="0.5" y="0.0769231" />
+                            <point x="0.7" y="0.153846" />
+                            <point x="0.9" y="0.307692" />
+                            <point x="0.9" y="0.615385" />
+                            <point x="0.5" y="0.923077" />
+                            <point x="0.1" y="0.615385" />
+                            <point x="0.1" y="0.307692" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Zombie" sid="9141138611630169">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="BoundToLayout" sid="1962083038879333">
+                    <behavior id="bound" />
+                </behavior-type>
+                <behavior-type name="Solid" sid="7572181685995447">
+                    <behavior id="solid" />
+                </behavior-type>
+                <behavior-type name="LineOfSight" sid="9618088957032211">
+                    <behavior id="LOS" />
+                </behavior-type>
+                <behavior-type name="Pathfinding" sid="9663307096190791">
+                    <behavior id="Pathfinding" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6795221550824966" speed="5">
+                    <frame duration="1" hotspotX="0.4" hotspotY="0.473684" original-source="D:\Matt\Documents\GitHub\Project-Balboa\Dark Ritual\Zombie.png">
+                        <collision-poly>
+                            <point x="0.15" y="0.263158" />
+                            <point x="0.35" y="0.0526316" />
+                            <point x="0.75" y="0.0526316" />
+                            <point x="0.75" y="0.473684" />
+                            <point x="0.8" y="0.947368" />
+                            <point x="0.35" y="0.947368" />
+                            <point x="0.15" y="0.684211" />
+                            <point x="0.05" y="0.473684" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families />
