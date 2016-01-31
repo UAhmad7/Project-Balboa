@@ -109,6 +109,7 @@
                     </properties>
                     <instance-variables>
                         <has_urn>false</has_urn>
+                        <Cooldown>0</Cooldown>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="8Direction">

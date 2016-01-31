@@ -236,6 +236,36 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="4147293704046492">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="8029870857838738" type="System">
+                            <param id="0" name="Interval (seconds)">3.75 / (ItemsSacrificed + 1)</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="7613426109543277" type="System">
+                            <param id="0" name="Object to create">Zombie</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">random(LayoutWidth)</param>
+                            <param id="3" name="Y">random(LayoutHeight)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4445784850819922">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="4599237217680574" type="System">
+                            <param id="0" name="Interval (seconds)">60</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="4166012373959652" type="System">
+                            <param id="0" name="Object to create">Urn</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="X">random(LayoutWidth)</param>
+                            <param id="3" name="Y">random(LayoutHeight)</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
         <event-group description="" sid="1902471981025477" title="Zombie AI">
@@ -327,7 +357,7 @@
                 <event-block sid="6174492991808772">
                     <conditions>
                         <condition id="-6" name="Every X seconds" sid="3511974258720334" type="System">
-                            <param id="0" name="Interval (seconds)">2</param>
+                            <param id="0" name="Interval (seconds)">2 / (ItemsSacrificed  + 1)</param>
                         </condition>
                         <condition id="-14" name="Compare variable" sid="4756337374023296" type="System">
                             <param id="0" name="Variable">Health</param>
@@ -358,7 +388,7 @@
                             <param id="0" name="Visibility">1</param>
                         </action>
                         <action id="-16" name="Wait" sid="3067067154627213" type="System">
-                            <param id="0" name="Seconds">5</param>
+                            <param id="0" name="Seconds">2.5</param>
                         </action>
                         <action id="-9" name="Set value" sid="9726241796909839" type="System">
                             <param id="0" name="Variable">Score</param>
@@ -409,6 +439,153 @@
                             <param id="0" name="Text">&quot;Score: &quot; &amp; Score</param>
                         </action>
                     </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="5535408823388191" title="Jeremy&apos;s Stuff">
+            <sub-events>
+                <event-block sid="5483151846963196">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="3963833130968757" type="Player">
+                            <param id="0" name="Object">Altar</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="5263952527367598" type="Player">
+                            <param id="0" name="Instance variable">has_urn</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="4231602046554646" type="Player">
+                            <param id="0" name="Instance variable">has_urn</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="7401945054403555" type="System">
+                            <param id="0" name="Variable">ItemsSacrificed</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="667349063453339">
+                            <conditions>
+                                <condition id="-19" name="Pick all" sid="734580226817734" type="System">
+                                    <param id="0" name="Object">Zombie</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="6358681070310681" type="Zombie" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="6440395637327646">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="6237436908065997" type="Player">
+                            <param id="0" name="Object">Urn</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="6543105703257998" type="Player">
+                            <param id="0" name="Instance variable">has_urn</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="2860443258490072" type="Urn" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="4711277266560947">
+            <conditions>
+                <condition id="-8" name="Is boolean instance variable set" sid="8878430579295366" type="Player">
+                    <param id="0" name="Instance variable">has_urn</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="9868926736350934" type="Urn_Hud">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7809517433468472">
+            <conditions>
+                <condition id="-22" name="Else" sid="2557359670203493" type="System" />
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="8244643310931916" type="Urn_Hud">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="7842516299613142" title="Guns">
+            <sub-events>
+                <variable constant="1" name="COOLDOWN" sid="665102438894857" static="0" type="number">0.67</variable>
+                <event-block sid="3216844017062827">
+                    <conditions>
+                        <condition id="0" name="On click" sid="5176266928264207" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="9681013942086387" type="Player">
+                            <param id="0" name="Instance variable">Cooldown</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="9092781049083925" type="Player">
+                            <param id="0" name="Instance variable">Cooldown</param>
+                            <param id="1" name="Value">COOLDOWN</param>
+                        </action>
+                        <action id="0" name="Spawn another object" sid="5193612522975465" type="Player">
+                            <param id="0" name="Object">Bullet</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="1887541390013953">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="7113416816588633" type="Bullet">
+                            <param id="0" name="Object">Walls</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="2486732510954453" type="Bullet" />
+                    </actions>
+                </event-block>
+                <event-block sid="7610847416037726">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="515785807283707" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="5731598077780946" type="Player">
+                            <param id="0" name="Instance variable">Cooldown</param>
+                            <param id="1" name="Value">dt</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6832028586511645">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="1196380348019785" type="Bullet">
+                            <param id="0" name="Object">Zombie</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="6352683742382977" type="Bullet" />
+                    </actions>
+                    <sub-events>
+                        <event-block sid="1408009373602213">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="367132355872387" type="Zombie">
+                                    <param id="0" name="Object">Flashlight</param>
+                                </condition>
+                                <condition id="-8" name="Is boolean instance variable set" sid="6660700687201826" type="Flashlight">
+                                    <param id="0" name="Instance variable">emitting_light</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="5226311745881005" type="Zombie" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>

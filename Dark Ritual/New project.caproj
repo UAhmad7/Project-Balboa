@@ -19,6 +19,7 @@
         <plugin author="Scirra" id="Tilemap" version="1">Tilemap</plugin>
     </used-plugins>
     <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
         <behavior author="Scirra" id="LOS" version="1">Line Of Sight</behavior>
         <behavior author="Scirra" id="Pathfinding" version="1">Pathfinding</behavior>
@@ -58,6 +59,7 @@
             <plugin id="Sprite" />
             <instance-variables>
                 <instance-variable comment="does the player have the urn?" name="has_urn" sid="1700255784822017" type="boolean" />
+                <instance-variable name="Cooldown" sid="2826944712945407" type="number" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="8Direction" sid="9387494759302169">
@@ -286,6 +288,11 @@
         </object-type>
         <object-type name="Altar" sid="2346386972103251">
             <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="4129714979819375">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1272694605108904" speed="5">
                     <frame duration="1" hotspotX="0.510638" hotspotY="0.516129" original-source="C:\Users\myode\Desktop\000.png">
@@ -317,6 +324,48 @@
                             <point x="0.5" y="1" />
                             <point x="0.333333" y="0.666667" />
                             <point x="0.166667" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Urn_Hud" sid="5499919540266879">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2339808023562356" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Jeremy\Documents\GitHub\Project-Balboa\Dark Ritual\Items\Urn.png">
+                        <collision-poly>
+                            <point x="0.25" y="0.25" />
+                            <point x="0.5" y="0" />
+                            <point x="0.75" y="0.25" />
+                            <point x="0.833333" y="0.5" />
+                            <point x="0.666667" y="0.666667" />
+                            <point x="0.5" y="1" />
+                            <point x="0.333333" y="0.666667" />
+                            <point x="0.166667" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Bullet" sid="3055774661423395">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="8603256025393863">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6552480986715422" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="D:\Matt\Documents\GitHub\Bullet.png">
+                        <collision-poly>
+                            <point x="0" y="0" />
+                            <point x="0.5" y="0" />
+                            <point x="0.875" y="0.25" />
+                            <point x="1" y="0.5" />
+                            <point x="0.875" y="0.75" />
+                            <point x="0.5" y="1" />
+                            <point x="0" y="1" />
                         </collision-poly>
                     </frame>
                 </animation>
