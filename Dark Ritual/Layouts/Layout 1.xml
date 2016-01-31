@@ -148,25 +148,25 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <instance-variables>
-                        <charge>10</charge>
+                        <charge>2</charge>
                         <emitting_light>true</emitting_light>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Pin" />
                     </behavior-instances>
-                    <blend-mode>0</blend-mode>
+                    <blend-mode>1</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>634</x>
                         <y>256</y>
                         <z>0</z>
-                        <width>512</width>
-                        <height>384</height>
+                        <width>384</width>
+                        <height>288</height>
                         <depth>0</depth>
                         <hotspotX>0.125</hotspotX>
                         <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
-                        <opacity>0.800000012</opacity>
+                        <opacity>0.5</opacity>
                     </world>
                 </instance>
             </instances>

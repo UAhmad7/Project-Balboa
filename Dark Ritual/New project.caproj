@@ -31,8 +31,8 @@
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
     </configurations>
     <window-size>
-        <width>1280</width>
-        <height>720</height>
+        <width>800</width>
+        <height>480</height>
     </window-size>
     <pixel-rounding>0</pixel-rounding>
     <preview-effects>1</preview-effects>
@@ -108,7 +108,7 @@
         </object-type>
         <object-type name="FloorTiles" sid="2007695434524002">
             <plugin id="Tilemap" />
-            <texture original-source="D:\Matt\Documents\GitHub\Project-Balboa\Dark Ritual\Tileset-Dark.png" />
+            <texture original-source="D:\Matt\Documents\GitHub\Project-Balboa\Dark Ritual\Textures\FloorTiles.png" />
             <tiles />
         </object-type>
         <object-type name="Walls" sid="224019080532586">
@@ -177,6 +177,9 @@
         </object-type>
         <object-type name="Zombie" sid="8881697365345342">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Cooldown" sid="4237663632662205" type="number" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="Solid" sid="7420745166166307">
                     <behavior id="solid" />

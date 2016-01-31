@@ -5,6 +5,7 @@
     <events>
         <variable constant="0" name="ItemsInventory" sid="7441565150820299" static="0" type="number">0</variable>
         <variable constant="0" name="ItemsSacrificed" sid="3378719633539822" static="0" type="number">0</variable>
+        <variable constant="0" name="ZedAttackSpeed" sid="9320615472953656" static="0" type="number">3</variable>
         <event-group description="" sid="309169230906067" title="Movement">
             <sub-events>
                 <event-block sid="3764245635268587">
@@ -141,7 +142,7 @@
                         </condition>
                         <condition id="-10" name="Compare opacity" sid="8569684193713354" type="Flashlight">
                             <param id="0" name="Comparison">2</param>
-                            <param id="1" name="Opacity">80</param>
+                            <param id="1" name="Opacity">50</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -236,6 +237,130 @@
                             </actions>
                         </event-block>
                     </sub-events>
+                </event-block>
+                <event-block sid="2172064338507342">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="5406142801099348" type="Zombie">
+                            <param id="0" name="Object">Player</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="5594069316246415" type="Zombie">
+                            <param id="0" name="Instance variable">Cooldown</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" sid="8290939828785418" type="System">
+                            <param id="0" name="Variable">Health</param>
+                            <param id="1" name="Value">10</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="9059884738713235" type="Zombie">
+                            <param id="0" name="Instance variable">Cooldown</param>
+                            <param id="1" name="Value">ZedAttackSpeed</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7677836604796736">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="7595073691455176" type="Zombie">
+                            <param id="0" name="Instance variable">Cooldown</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="2700472794746394" type="Zombie">
+                            <param id="0" name="Instance variable">Cooldown</param>
+                            <param id="1" name="Value">dt</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="7314010946784807" title="Umair&apos;s Stuff">
+            <sub-events>
+                <event-block sid="6174492991808772">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="3511974258720334" type="System">
+                            <param id="0" name="Interval (seconds)">0.2</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="4756337374023296" type="System">
+                            <param id="0" name="Variable">Health</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="6487191222863236" type="System">
+                            <param id="0" name="Variable">Score</param>
+                            <param id="1" name="Value">10</param>
+                        </action>
+                        <action id="0" name="Set text" sid="8172762694421359" type="Score">
+                            <param id="0" name="Text">&quot;Score: &quot; &amp; Score</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1229644818308297">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="8373828784597712" type="System">
+                            <param id="0" name="Variable">Health</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-26" name="Restart layout" sid="6722771994050057" type="System" />
+                        <action id="-9" name="Set value" sid="7612349103526914" type="System">
+                            <param id="0" name="Variable">Health</param>
+                            <param id="1" name="Value">100</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="9726241796909839" type="System">
+                            <param id="0" name="Variable">Score</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="3067067154627213" type="System">
+                            <param id="0" name="Seconds">5</param>
+                        </action>
+                        <action id="0" name="Set text" sid="3105244992526445" type="Score">
+                            <param id="0" name="Text">&quot;Score: &quot; &amp; Score</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="861456925508888">
+                    <conditions>
+                        <condition id="0" name="On click" sid="3711100595982005" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" sid="2212221483419688" type="System">
+                            <param id="0" name="Variable">Health</param>
+                            <param id="1" name="Value">10</param>
+                        </action>
+                        <action id="0" name="Set text" sid="2852522651614584" type="Health">
+                            <param id="0" name="Text">&quot;Health: &quot; &amp; Health</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="9789287225781634" type="Sprite">
+                            <param id="0" name="Width">Sprite.ImageWidth * (Health / 100)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="1530860730997424">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="7566612840251734" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-5" name="Set width" sid="7170626696374453" type="Sprite">
+                            <param id="0" name="Width">Sprite.ImageWidth * (Health / 100)</param>
+                        </action>
+                        <action id="0" name="Set text" sid="7592228032707393" type="Health">
+                            <param id="0" name="Text">&quot;Health: &quot; &amp; Health</param>
+                        </action>
+                        <action id="0" name="Set text" sid="8166090359504907" type="Score">
+                            <param id="0" name="Text">&quot;Score: &quot; &amp; Score</param>
+                        </action>
+                    </actions>
                 </event-block>
             </sub-events>
         </event-group>
