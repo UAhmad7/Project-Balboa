@@ -281,6 +281,25 @@
         <object-type name="Audio" sid="8808921913791694">
             <plugin id="Audio" />
         </object-type>
+        <object-type name="Altar" sid="2346386972103251">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1272694605108904" speed="5">
+                    <frame duration="1" hotspotX="0.510638" hotspotY="0.516129" original-source="C:\Users\myode\Desktop\000.png">
+                        <collision-poly>
+                            <point x="0.12766" y="0.193548" />
+                            <point x="0.489362" y="0.0322581" />
+                            <point x="0.87234" y="0.193548" />
+                            <point x="0.978723" y="0.483871" />
+                            <point x="0.914894" y="0.870968" />
+                            <point x="0.489362" y="0.967742" />
+                            <point x="0.0851064" y="0.870968" />
+                            <point x="0.0425532" y="0.483871" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
