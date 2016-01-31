@@ -264,10 +264,10 @@
                         <x>-99</x>
                         <y>406</y>
                         <z>0</z>
-                        <width>20</width>
+                        <width>100</width>
                         <height>19</height>
                         <depth>0</depth>
-                        <hotspotX>1.225000024</hotspotX>
+                        <hotspotX>0.245000005</hotspotX>
                         <hotspotY>1.473684192</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
@@ -308,7 +308,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>37</x>
-                        <y>428</y>
+                        <y>437</y>
                         <z>0</z>
                         <width>206</width>
                         <height>36</height>
@@ -334,11 +334,38 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>573</x>
-                        <y>433</y>
+                        <x>329</x>
+                        <y>438</y>
                         <z>0</z>
                         <width>218</width>
                         <height>33</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="GameOver" uid="18">
+                    <properties>
+                        <text>Game Over</text>
+                        <initial-visibility>Invisible</initial-visibility>
+                        <font>Arial,-32,400,0</font>
+                        <color>204,0,51</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>276</x>
+                        <y>175</y>
+                        <z>0</z>
+                        <width>200</width>
+                        <height>30</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
