@@ -297,6 +297,12 @@
                         <action id="0" name="Set text" sid="5961092810589202" type="Health">
                             <param id="0" name="Text">&quot;Health: &quot; &amp; Health</param>
                         </action>
+                        <action id="0" name="Play" sid="9835806281103575" type="Audio">
+                            <param id="0" name="Audio file">ZombieAttack</param>
+                            <param id="2" name="Loop">0</param>
+                            <param id="3" name="Volume">0</param>
+                            <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="7677836604796736">
